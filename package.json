@@ -1,0 +1,27 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is final revision of Namaste-React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agarwalmohak6/namaste-react-final-revision.git"
+  },
+  "keywords": [
+    "react",
+    "final",
+    "revision",
+    "with",
+    "netflix",
+    "gpt"
+  ],
+  "author": "Mohak Agarwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agarwalmohak6/namaste-react-final-revision/issues"
+  },
+  "homepage": "https://github.com/agarwalmohak6/namaste-react-final-revision#readme"
+}
