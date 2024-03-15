@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/agarwalmohak6/namaste-react-final-revision/issues"
   },
-  "homepage": "https://github.com/agarwalmohak6/namaste-react-final-revision#readme"
+  "homepage": "https://github.com/agarwalmohak6/namaste-react-final-revision#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
