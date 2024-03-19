@@ -13,9 +13,12 @@ const Title = () => <h1>Title using Functional Component</h1>;
 // Multi line Functional component
 const HeadingComponent = () => (
   <div id="conatiner">
+    {heading}
+    {headingJSX}
     <Title />
+    <h2>{10 + 20}</h2>
     <h1 className="heading">Heading using functional component</h1>
   </div>
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>);
+root.render(<HeadingComponent />);
