@@ -569,12 +569,9 @@ const RestaurantCard = ({ name, cuisines, cloudinaryImageId, avgRating }) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard {...restaurantList[0].card.card.info} />
-      <RestaurantCard {...restaurantList[1].card.card.info} />
-      <RestaurantCard {...restaurantList[2].card.card.info} />
-      <RestaurantCard {...restaurantList[3].card.card.info} />
-      <RestaurantCard {...restaurantList[4].card.card.info} />
-      <RestaurantCard {...restaurantList[5].card.card.info} />
+      {restaurantList.map((restaurant) => {
+        return <RestaurantCard {...restaurant?.card?.card?.info} />;
+      })}
     </div>
   );
 };
