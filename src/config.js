@@ -1,48 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const IMG_CDN_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-// Food Villa Begins
-/**
-    header
-      -logo
-      -nav items
-      -cart
-    body
-      -search bar
-      -restaurant list
-        -restaurant image
-        -name
-        -rating
-        -cuisines
-    footer
-      -links
-      -copyright
-  */
-const Title = () => (
-  <a href="/">
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpbS295BL3xdJwXWwh7cTytVNtCwa-0r5TI9UviYdDmsnDk15ovoj2HcZlusgDiYkuo4o&usqp=CAU"
-      alt="Logo"
-      className="logo"
-    />
-  </a>
-);
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const restaurantList = [
+export const restaurantList = [
   {
     card: {
       card: {
@@ -548,48 +507,3 @@ const restaurantList = [
     },
   },
 ];
-// below line we did props destructuring, like some cool developers
-const RestaurantCard = ({ name, cuisines, cloudinaryImageId, avgRating }) => {
-  return (
-    <div className="card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="food image"
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h4>{avgRating} Stars</h4>
-    </div>
-  );
-};
-// Props- properties that we pass as an argument to a functional component
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant?.card?.card?.info} key={restaurant?.card?.card?.info.id}/>;
-      })}
-    </div>
-  );
-};
-const Footer = () => {
-  return (
-    <div className="footer">
-      <h1>Footer Component</h1>
-    </div>
-  );
-};
-const AppLayout = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
