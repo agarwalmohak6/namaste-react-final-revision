@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 
 // function to update restaurant list using search functionality
-const filterRestaurant = (searchText, restaurants) => {
-  return restaurants.filter((r) =>
-    r.card?.card?.info?.name.includes(searchText)
-  );
+const filterRestaurant = (searchText, restro) => {
+  return restro.filter((r) => r?.info?.name.includes(searchText));
 };
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setrestaurants] = useState(restaurantList);
+  const [restro, setRestro] = useState(restaurantList);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  // Fetching live data from swiggy API
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6065883&lng=77.3694084&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setRestro(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
   return (
     <>
       <div className="search-container">
@@ -28,21 +39,18 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             // need to filter data
-            const data = filterRestaurant(searchText, restaurants);
+            const data = filterRestaurant(searchText, restro);
             // update the state
-            setrestaurants(data);
+            setRestro(data);
           }}
         >
           Search
         </button>
       </div>
       <div className="restaurant-list">
-        {restaurants.map((restaurant) => {
+        {restro.map((restaurant) => {
           return (
-            <RestaurantCard
-              {...restaurant?.card?.card?.info}
-              key={restaurant?.card?.card?.info.id}
-            />
+            <RestaurantCard {...restaurant?.info} key={restaurant?.info.id} />
           );
         })}
       </div>
