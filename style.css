@@ -36,6 +36,12 @@
 }
 
 /* Body */
+.search-container {
+  margin-left: 10px;
+}
+.search-btn {
+  margin-left: 5px;
+}
 .restaurant-list {
   display: flex;
   justify-content: space-evenly;
