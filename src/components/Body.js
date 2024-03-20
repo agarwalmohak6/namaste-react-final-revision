@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 // function to update restaurant list using search functionality
 const filterRestaurant = (searchText, restro) => {
@@ -9,7 +10,7 @@ const filterRestaurant = (searchText, restro) => {
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [restro, setRestro] = useState(restaurantList);
+  const [restro, setRestro] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -23,6 +24,9 @@ const Body = () => {
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+  // rendering shimmer ui for initial render till api fetches data and renders
+  if(restro.length===0)
+    return <Shimmer/>;
   return (
     <>
       <div className="search-container">
