@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
@@ -24,10 +23,11 @@ const Body = () => {
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  // rendering shimmer ui for initial render till api fetches data and renders
-  if(restro.length===0)
-    return <Shimmer/>;
-  return (
+
+  // rendering shimmer ui for initial render till api fetches data and re-renders, Conditional rendering
+  return restro.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-container">
         <input

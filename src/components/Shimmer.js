@@ -30,6 +30,9 @@ const Shimmer = () => {
         <li className="shimmer-card">
           <div className="img-div"></div>
         </li>
+        <li className="shimmer-card">
+          <div className="img-div"></div>
+        </li>
       </ul>
     </>
   );
