@@ -11,8 +11,8 @@ const Error = () => {
             something is broken, report a problem and we will try to fix it.
           </p>
           <div className="btns">
-            <NavLink to="/">return home</NavLink>
-            <NavLink to="/contact">report problem</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/contact">Report a problem</NavLink>
           </div>
         </div>
       </section>
