@@ -9,18 +9,24 @@
   margin: 10px;
   border: 2px dashed black;
 }
-.nav-items ul {
+.nav-items {
+  margin-top: 10px;
+}
+.nav-link-ul {
   margin-top: 16px;
   display: flex;
   list-style-type: none;
 }
-.nav-items ul li {
+.nav-link {
+  font-family: sans-serif;
+  text-decoration: none;
   padding: 10px;
+  color: black;
   border: 1px solid black;
   border-radius: 30%;
   margin-right: 5px;
 }
-.nav-items ul li:hover {
+.nav-link:hover {
   cursor: pointer;
   background-color: black;
   color: white;
