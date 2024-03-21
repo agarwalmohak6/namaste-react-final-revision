@@ -10,6 +10,7 @@ const filterRestaurant = (searchText, restro) => {
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [restro, setRestro] = useState([]);
+  const [filteredRestro, setFilteredRestro] = useState(restro);
   useEffect(() => {
     fetchData();
   }, []);
@@ -20,6 +21,9 @@ const Body = () => {
     );
     const json = await data.json();
     setRestro(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestro(
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -45,14 +49,14 @@ const Body = () => {
             // need to filter data
             const data = filterRestaurant(searchText, restro);
             // update the state
-            setRestro(data);
+            setFilteredRestro(data);
           }}
         >
           Search
         </button>
       </div>
       <div className="restaurant-list">
-        {restro.map((restaurant) => {
+        {filteredRestro.map((restaurant) => {
           return (
             <RestaurantCard {...restaurant?.info} key={restaurant?.info.id} />
           );

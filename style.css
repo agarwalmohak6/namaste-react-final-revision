@@ -56,7 +56,7 @@
   margin-bottom: 5px;
   border: 2px solid black;
   width: 200px;
-  height: 350px;
+  height: 380px;
   text-align: center;
 }
 /* Shimmer  */
@@ -77,4 +77,52 @@
   width: 200px;
   height: 350px;
   text-align: center;
+}
+
+/* Error */
+#error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-content {
+  text-align: center;
+}
+
+.error-content h2 {
+  font-size: 6rem;
+  color: #ff5733; /* You can change the color as per your preference */
+  margin-bottom: 10px;
+}
+
+.error-content h4 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.error-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btns a {
+  padding: 10px 20px;
+  background-color: #ff5733; /* You can change the color as per your preference */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.btns a:hover {
+  background-color: #e64a19; /* You can change the color as per your preference */
 }
