@@ -125,3 +125,26 @@
 .btns a:hover {
   background-color: #e64a19; /* You can change the color as per your preference */
 }
+
+/* Footer Styles */
+.footer {
+  background-color: #333; /* Background color of the footer */
+  color: #fff; /* Text color */
+  padding: 20px; /* Padding around the content */
+  text-align: center; /* Align text to center */
+}
+
+/* Footer */
+.footer-items {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Align items horizontally */
+}
+.footer-h1 {
+  font-size: 30px; /* Adjust font size */
+  margin-bottom: 10px; /* Add spacing between title and other items */
+}
+.footer-h4 {
+  font-size: 14px; /* Adjust font size */
+  margin-bottom: 20px; /* Add spacing between items */
+}

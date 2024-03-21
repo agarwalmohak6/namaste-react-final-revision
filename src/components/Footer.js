@@ -1,7 +1,12 @@
+import { NavLink } from "react-router-dom";
+import Title from "./Title";
 const Footer = () => {
   return (
     <div className="footer">
-      <h1>Footer</h1>
+      <div className="footer-items">
+        <h1 className="footer-h1">Happy Fooding..🍔🍟</h1>
+        <h4 className="footer-h4">©Mohak,2024</h4>
+      </div>
     </div>
   );
 };
