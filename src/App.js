@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Body from "./components/Body";
+import RestaurantMenu from "./components/RestaurantMenu";
 import Footer from "./components/Footer";
 
 // Food Villa Begins
@@ -55,6 +56,15 @@ const AppLayout = () => {
               <>
                 <Header />
                 <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/restaurant/:resId"
+            element={
+              <>
+                <Header />
+                <RestaurantMenu />
               </>
             }
           />
