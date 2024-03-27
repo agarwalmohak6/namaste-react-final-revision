@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { NavLink } from "react-router-dom";
 
 // function to update restaurant list using search functionality
 const filterRestaurant = (searchText, restro) => {
@@ -59,7 +60,12 @@ const Body = () => {
       <div className="restaurant-list">
         {filteredRestro.map((restaurant) => {
           return (
-            <RestaurantCard {...restaurant?.info} key={restaurant?.info.id} />
+            <NavLink
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant?.info.id}
+            >
+              <RestaurantCard {...restaurant?.info} />
+            </NavLink>
           );
         })}
       </div>
