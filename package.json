@@ -1,8 +1,7 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "description": "This is final revision of Namaste-React",
-  "main": "index.html",
+  "description": "This is the final revision of Namaste-React",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
