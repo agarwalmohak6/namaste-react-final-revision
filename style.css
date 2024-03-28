@@ -20,13 +20,14 @@ hr {
   display: flex;
   list-style-type: none;
 }
+.nav-link-ul li {
+  margin-left: 3px;
+}
 .nav-link {
   font-family: sans-serif;
   text-decoration: none;
   padding: 10px;
   color: black;
-  border: 1px solid black;
-  border-radius: 30%;
   margin-right: 5px;
 }
 .nav-link:hover {
@@ -34,8 +35,8 @@ hr {
   background-color: black;
   color: white;
   padding: 10px;
-  border-radius: 40%;
   transition: 0.6s;
+  border-radius: 5px;
   margin-right: 5px;
 }
 .logo {
@@ -230,7 +231,7 @@ h4 {
 }
 
 /* Loader */
-.loader{
+.loader {
   margin-left: 47%;
   margin-top: 180px;
   margin-bottom: 200px;

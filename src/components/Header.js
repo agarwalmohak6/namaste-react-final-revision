@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import Title from "./Title";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="header">
       <Title />
@@ -24,6 +26,11 @@ const Header = () => {
           <li>
             <NavLink to="/cart" className={"nav-link"}>
               Cart
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="#" className={"nav-link"}>
+              Online Status:{onlineStatus ? "🟢" : "🔴"}
             </NavLink>
           </li>
         </ul>

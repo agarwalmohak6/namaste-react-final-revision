@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { Oval } from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // function to update restaurant list using search functionality
 const filterRestaurant = (searchText, restro) => {
@@ -28,6 +29,15 @@ const Body = () => {
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  // checking if user is online or offline
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline..! Please check your internet connection.
+      </h1>
+    );
 
   // rendering shimmer ui for initial render till api fetches data and re-renders, Conditional rendering
   return restro.length === 0 ? (
