@@ -305,24 +305,3 @@ export const restaurantList = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-
-const mockObj = [
-  {
-    id: "72159134",
-    name: "Kebabs in a Box (Non Veg Overload)",
-    category: "Kebabs Platter and Starters",
-    description:
-      "Serves 2 | Chilly Garlic Prawns (6 Pcs) + Chicken Tikka (6 Pcs) + Chicken Wings (6 Pcs) + Tandoori Tangadi (2Pcs) + Fish Tikka (6 Pcs) + Angoori Jamun (8 Pcs). Accompanied with Dips & Salad. Non Veg Overload in a Box.",
-    imageId:
-      "FOOD_CATALOG/IMAGES/CMS/2024/3/6/030e00df-5de4-4e88-bd5d-f0dc5a82d3d4_cc0a9242-24e8-4ecc-a74b-291e219836b8_compressed",
-    inStock: 1,
-    price: 92900,
-    ratings: {
-      aggregatedRating: {
-        rating: "4.8",
-        ratingCount: "9 ratings",
-        ratingCountV2: "9",
-      },
-    },
-  },
-];
