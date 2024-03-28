@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-hr{
+hr {
   border: 2px solid red;
 }
 /* Header */
@@ -125,6 +125,46 @@ h4 {
   text-align: center;
 }
 
+/* About */
+.user-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-left: 38%;
+}
+.user-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+.user-card img:hover {
+  transform: scale(1.1);
+}
+.user-card h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.user-card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+.user-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
 /* Error */
 #error-page {
   display: flex;
@@ -137,7 +177,7 @@ h4 {
 }
 .error-content h2 {
   font-size: 6rem;
-  color: #ff5733; /* You can change the color as per your preference */
+  color: #ff5733;
   margin-bottom: 10px;
 }
 .error-content h4 {
@@ -155,7 +195,7 @@ h4 {
 }
 .btns a {
   padding: 10px 20px;
-  background-color: #ff5733; /* You can change the color as per your preference */
+  background-color: #ff5733;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -163,28 +203,35 @@ h4 {
   transition: background-color 0.3s ease;
 }
 .btns a:hover {
-  background-color: #e64a19; /* You can change the color as per your preference */
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #333; /* Background color of the footer */
-  color: #fff; /* Text color */
-  padding: 20px; /* Padding around the content */
-  text-align: center; /* Align text to center */
+  background-color: #e64a19;
 }
 
 /* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 .footer-items {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
-  align-items: center; /* Align items horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .footer-h1 {
-  font-size: 30px; /* Adjust font size */
-  margin-bottom: 10px; /* Add spacing between title and other items */
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-weight: 300;
 }
 .footer-h4 {
-  font-size: 14px; /* Adjust font size */
-  margin-bottom: 20px; /* Add spacing between items */
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Loader */
+.loader{
+  margin-left: 47%;
+  margin-top: 180px;
+  margin-bottom: 200px;
 }

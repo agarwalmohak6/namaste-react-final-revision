@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import Shimmer from "./Shimmer";
+import { Oval } from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
 
 // function to update restaurant list using search functionality
@@ -20,7 +20,6 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6065883&lng=77.3694084&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
-    console.log(data);
     const json = await data.json();
     setRestro(
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -32,7 +31,17 @@ const Body = () => {
 
   // rendering shimmer ui for initial render till api fetches data and re-renders, Conditional rendering
   return restro.length === 0 ? (
-    <Shimmer />
+    <div className="loader">
+      <Oval
+        visible={true}
+        height="80"
+        width="80"
+        color="#4fa94d"
+        ariaLabel="oval-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+    </div>
   ) : (
     <>
       <div className="search-container">
