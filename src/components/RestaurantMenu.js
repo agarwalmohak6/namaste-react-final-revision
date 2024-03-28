@@ -20,10 +20,11 @@ const RestaurantMenu = () => {
       <h2>Menu</h2>
       <ul className="menu-list">
         {(
-          (resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-            ?.card?.itemCards) ||
-          (resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-            ?.card?.itemCards) || []
+          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+            ?.card?.itemCards ||
+          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+            ?.card?.itemCards ||
+          []
         ).map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} -{" Rs"}{" "}
