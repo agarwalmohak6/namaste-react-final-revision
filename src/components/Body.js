@@ -23,10 +23,10 @@ const Body = () => {
     );
     const json = await data.json();
     setRestro(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestro(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

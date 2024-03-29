@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Oval } from "react-loader-spinner";
 import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
