@@ -29,6 +29,11 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/grocery" className={"nav-link"}>
+              Grocery
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="#" className={"nav-link"}>
               Online Status:{onlineStatus ? "🟢" : "🔴"}
             </NavLink>

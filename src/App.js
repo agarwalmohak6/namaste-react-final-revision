@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,6 +9,7 @@ import Body from "./components/Body";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Footer from "./components/Footer";
 
+const Grocery = lazy(() => import("./components/Grocery"));
 // Food Villa Begins
 /**
     header
@@ -56,6 +57,31 @@ const AppLayout = () => {
               <>
                 <Header />
                 <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/grocery"
+            element={
+              <>
+                <Header />
+                <Suspense
+                  fallback={
+                    <div className="loader">
+                      <Oval
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="#4fa94d"
+                        ariaLabel="oval-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                      />
+                    </div>
+                  }
+                >
+                  <Grocery />
+                </Suspense>
               </>
             }
           />
