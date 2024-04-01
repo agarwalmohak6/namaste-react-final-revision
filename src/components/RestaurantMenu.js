@@ -19,6 +19,7 @@ const RestaurantMenu = () => {
           "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
       );
     });
+
   return resInfo === null ? (
     <Shimmer />
   ) : (
@@ -29,10 +30,12 @@ const RestaurantMenu = () => {
         {costForTwoMessage}
       </p>
       {categories.map((category) => (
-        <RestaurantCategories data={category?.card?.card} />
+        <RestaurantCategories
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+        />
       ))}
     </div>
   );
 };
-
 export default RestaurantMenu;

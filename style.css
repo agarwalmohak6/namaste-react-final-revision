@@ -158,6 +158,12 @@ h4 {
 .item-list > div:hover {
   background-color: #f9f9f9;
 }
+.dish-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e1e1e1;
+}
 .dish-info {
   display: flex;
   justify-content: space-between;
