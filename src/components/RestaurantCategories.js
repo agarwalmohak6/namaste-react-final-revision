@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategories = ({ data }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const RestaurantCategories = ({ data, isOpen, setShowIndex }) => {
   const toggleAccordion = () => {
-    setIsOpen(!isOpen);
+    setShowIndex();
   };
 
   return (
