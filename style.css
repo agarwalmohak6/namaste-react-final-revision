@@ -74,7 +74,6 @@ h3,
 h4 {
   color: black;
   padding: 3px;
-  
 }
 /* Restaurant Menu */
 .menu {
@@ -104,6 +103,83 @@ h4 {
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant Categories */
+.restaurant-category {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e1e1;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+.category-header {
+  background-color: #f8f8f8;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.category-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
+.category-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  overflow-y: auto;
+}
+.restaurant-category.open .category-content {
+  max-height: 500px;
+}
+
+/* Item List */
+.item-list {
+  margin-top: 20px;
+}
+.item-list > div {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 20px 0;
+  transition: background-color 0.3s ease;
+}
+.item-list > div:hover {
+  background-color: #f9f9f9;
+}
+.dish-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dish-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.dish-name:hover {
+  color: #0066ff;
+}
+.dish-price {
+  color: #008040;
+  font-size: 16px;
+  margin-left: 10px;
+}
+.dish-description {
+  color: #666;
+  margin-top: 8px;
+  font-size: 14px;
 }
 
 /* Shimmer  */

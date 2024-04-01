@@ -1,6 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategories from "./RestaurantCategories";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -13,10 +14,11 @@ const RestaurantMenu = () => {
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => {
       return (
         c.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ||
+        c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
       );
     });
-  console.log(categories);
   return resInfo === null ? (
     <Shimmer />
   ) : (
@@ -26,7 +28,11 @@ const RestaurantMenu = () => {
         {cuisines?.length > 0 ? cuisines.join(", ") : "Restro Closed"} -{" "}
         {costForTwoMessage}
       </p>
-      <h2>Menu</h2>
+      {categories.map((category) => (
+        // categories accordian
+        <RestaurantCategories data={category?.card?.card} />
+      ))}
+      {/* <h2>Menu</h2>
       <ul className="menu-list">
         {(
           resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
@@ -42,7 +48,7 @@ const RestaurantMenu = () => {
                 ?.price}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
