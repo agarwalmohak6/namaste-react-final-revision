@@ -29,26 +29,8 @@ const RestaurantMenu = () => {
         {costForTwoMessage}
       </p>
       {categories.map((category) => (
-        // categories accordian
         <RestaurantCategories data={category?.card?.card} />
       ))}
-      {/* <h2>Menu</h2>
-      <ul className="menu-list">
-        {(
-          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-            ?.card?.itemCards ||
-          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-            ?.card?.itemCards ||
-          []
-        ).map((item) => (
-          <li key={item?.card?.info?.id}>
-            {item?.card?.info?.name} -{" Rs"}{" "}
-            {item?.card?.info?.price / 100 ||
-              item?.card?.info?.variantsV2?.variantGroups[0]?.variations[0]
-                ?.price}
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 };
