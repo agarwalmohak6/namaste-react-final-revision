@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Title from "./Title";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
+
 const Header = () => {
   const onlineStatus = useOnlineStatus();
+  // Subscribing to the store using a selector
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="header">
       <Title />
@@ -25,7 +29,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink to="/cart" className={"nav-link"}>
-              Cart
+              &#x1F6D2; ({cartItems.length})
             </NavLink>
           </li>
           <li>

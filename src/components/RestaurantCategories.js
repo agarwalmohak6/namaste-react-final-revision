@@ -1,11 +1,10 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategories = ({ data, isOpen, setShowIndex }) => {
+const RestaurantCategories = ({ data, isOpen, index, setShowIndex }) => {
   const toggleAccordion = () => {
-    setShowIndex();
+    isOpen ? setShowIndex(null) : setShowIndex(index);
   };
-
   return (
     <div className={`restaurant-category ${isOpen ? "open" : ""}`}>
       <div className="category-header" onClick={toggleAccordion}>
