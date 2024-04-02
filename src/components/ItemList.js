@@ -18,7 +18,7 @@ const ItemList = ({ items }) => {
               alt="food image"
               className="dish-image"
             />
-            <button className="add-button" onClick={()=>handleAddItem(item)}>
+            <button className="add-button" onClick={() => handleAddItem(item)}>
               Add
             </button>
             <span className="dish-name">{item?.card?.info?.name}</span>

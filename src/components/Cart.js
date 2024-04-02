@@ -3,15 +3,14 @@ import { clearCart } from "../utils/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-
   const cartItems = useSelector((store) => store.cart.items);
 
   const dispatch = useDispatch();
-  
+
   const handleClearCart = () => {
     dispatch(clearCart());
   };
-  
+
   return (
     <div className="cart">
       <h1>Your Cart</h1>
