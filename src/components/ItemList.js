@@ -24,7 +24,7 @@ const ItemList = ({ items }) => {
             </button>
             <span className="dish-name">{item?.card?.info?.name}</span>
             <span className="dish-price">
-              ₹
+              â¹
               {item?.card?.info?.price / 100 ||
                 item?.card?.info?.defaultPrice / 100}
             </span>
