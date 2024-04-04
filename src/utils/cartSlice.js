@@ -1,3 +1,4 @@
+// cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
@@ -7,8 +8,15 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      // Mutating the state
-      state.items.push(action.payload);
+      const newItem = action.payload;
+      const existingItemIndex = state.items.findIndex(
+        (item) => item.card.info.id === newItem.card.info.id
+      );
+      if (existingItemIndex !== -1) {
+        state.items[existingItemIndex].count += 1;
+      } else {
+        state.items.push({ ...newItem, count: 1 });
+      }
     },
     removeItem: (state) => {
       state.items.pop();
@@ -17,8 +25,7 @@ const cartSlice = createSlice({
       state.items.length = 0;
     },
   },
-},
-);
+});
 
 export const { addItem, removeItem, clearCart } = cartSlice.actions;
 
