@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
 
-  const handleAddItem = (item, index) => {
+  const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
   return (
@@ -19,10 +19,7 @@ const ItemList = ({ items }) => {
               alt="food image"
               className="dish-image"
             />
-            <button
-              className="add-button"
-              onClick={() => handleAddItem(item, index)}
-            >
+            <button className="add-button" onClick={() => handleAddItem(item)}>
               Add
             </button>
             <span className="dish-name">{item?.card?.info?.name}</span>
