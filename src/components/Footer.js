@@ -9,7 +9,6 @@ const Footer = () => {
         <div className="footer-items">
           <h1 className="footer-h1">Happy Fooding..🍔🍟</h1>
           <h4 className="footer-h4">©Mohak,2024</h4>
-          <h5>Hello</h5>
         </div>
       </div>
     </>
