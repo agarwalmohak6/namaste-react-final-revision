@@ -1,6 +1,5 @@
-// ItemList.js
 import { IMG_CDN_URL } from "../config";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
 const ItemList = ({ items }) => {
@@ -9,9 +8,14 @@ const ItemList = ({ items }) => {
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
+  };
+
   return (
     <div className="item-list">
-      {items.map((item, index) => (
+      {items.map((item) => (
         <div key={item?.card?.info?.id}>
           <div>
             <img
@@ -22,9 +26,18 @@ const ItemList = ({ items }) => {
             <button className="add-button" onClick={() => handleAddItem(item)}>
               Add
             </button>
+            <span className="dish-count">{item.count}</span>{" "}
+            {item.count > 0 && (
+              <button
+                className="remove-button"
+                onClick={() => handleRemoveItem(item)}
+              >
+                Remove
+              </button>
+            )}
             <span className="dish-name">{item?.card?.info?.name}</span>
             <span className="dish-price">
-              â¹
+              ₹
               {item?.card?.info?.price / 100 ||
                 item?.card?.info?.defaultPrice / 100}
             </span>
