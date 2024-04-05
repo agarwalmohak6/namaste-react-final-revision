@@ -212,18 +212,33 @@ hr {
 }
 .dish-image {
   width: 100%;
-  height: 80px;
+  height: 200px;
   object-fit: cover;
   border-bottom: 1px solid black;
   border-radius: 5px;
 }
-.add-button {
+.add-button{
   color: green;
   padding: 2px;
   margin-right: 5px;
   font-size: medium;
   border-radius: 5px;
   cursor: pointer;
+}
+.remove-button{
+  color: red;
+  padding: 2px;
+  margin-right: 5px;
+  font-size: medium;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dish-count{
+  color: goldenrod;
+  padding: 2px;
+  margin-right: 5px;
+  font-style: 16px;
+  border-radius: 5px;
 }
 .dish-info {
   display: flex;
@@ -239,8 +254,8 @@ hr {
 .dish-name:hover {
   color: #0066ff;
 }
-.dish-price {
-  color: #008040;
+.dish-price{
+  color: green;
   font-size: 16px;
   margin-left: 10px;
 }
