@@ -17,8 +17,19 @@ const cartSlice = createSlice({
         state.items.push({ ...newItem, count: 1 });
       }
     },
-    removeItem: (state) => {
-      state.items.pop();
+    removeItem: (state, action) => {
+      const remItem = action.payload;
+      const existingItemIndex = state.items.findIndex(
+        (item) => item.card.info.id === remItem.card.info.id
+      );
+      if (
+        existingItemIndex !== -1 &&
+        state.items[existingItemIndex].count > 1
+      ) {
+        state.items[existingItemIndex].count -= 1;
+      } else {
+        state.items.pop();
+      }
     },
     clearCart: (state) => {
       state.items.length = 0;
